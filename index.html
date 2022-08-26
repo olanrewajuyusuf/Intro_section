@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset = "utf-8">
+    <title>Intro Section</title>
+    <link rel = "stylesheet" href = "styles.css">
+    <link rel = "stylesheet" href = "https://fonts.google.com/specimen/Epilogue">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="heading">
+        <img id="logo" src="images/logo.svg">
+        <nav>
+          <div id="section-1">
+            <ul>
+              <li class="bug">Features <img class="arrow" src="images/icon-arrow-down.svg" >
+                <div class="sub-menu">
+                  <ul class="tag">
+                    <li><img src="images/icon-todo.svg"> Todo List</li>
+                    <li><img src="images/icon-calendar.svg"> Calendar</li>
+                    <li><img src="images/icon-reminders.svg"> Reminders</li>
+                    <li><img src="images/icon-planning.svg"> Plannig</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="bug">Company <img class="arrow" src="images/icon-arrow-down.svg" >
+                <div class="sub-menu">
+                  <ul class="tug">
+                    <li>History</li>
+                    <li>Our Team</li>
+                    <li>Blog</li>
+                  </ul>
+                </div>
+              </li>
+              <li>Careers</li>
+              <li>About</li>
+            </ul>
+          </div>
+          <div id="last">
+            <p>Login</p>
+            <button>Register</button>
+          </div>
+        </nav>
+        <img id="menu-open" src="images/icon-menu.svg">
+      </div>
+      <div id="bg">
+        <img id="image" src="images/image-hero-mobile.png" alt="hero with laptop">
+        <img id="image-2" src="images/image-hero-desktop.png" alt="hero with laptop">
+        <div id="content">
+          <h1><span>Make</span> remote work</h1>
+          <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+        </div>
+        <button>Learn more</button>
+        <div id="data">
+          <img class="log one" src="images/client-databiz.svg">
+          <img class="log two" src="images/client-audiophile.svg">
+          <img class="log three" src="images/client-meet.svg">
+          <img class="log four" src="images/client-maker.svg">
+        </div>
+      </div>
+      <div id="menu-scroll">
+        <div id="trans"></div>
+        <div id="scroll">
+          <img id="menu-close" src="images/icon-close-menu.svg">
+          <div id="section">
+            <ul>
+              <li class="toggle" >Features <img class="arrow" src="images/icon-arrow-down.svg" >
+                <div class="sub-section">
+                  <ul>
+                    <li><img src="images/icon-todo.svg"> Todo List</li>
+                    <li><img src="images/icon-calendar.svg"> Calendar</li>
+                    <li><img src="images/icon-reminders.svg"> Reminders</li>
+                    <li><img src="images/icon-planning.svg"> Plannig</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="toggle">Company <img class="arrow" src="images/icon-arrow-down.svg" >
+                <div class="sub-section">
+                  <ul>
+                    <li>History</li>
+                    <li>Our Team</li>
+                    <li>Blog</li>
+                  </ul>
+                </div>
+              </li>
+              <li>Careers</li>
+              <li>About</li>
+            </ul>
+          </div>
+          <div id="last">
+            <p>Login</p>
+            <button>Register</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let arrow = document.querySelector(".arrow");
+      let toggle = document.querySelector(".toggle");
+      let bug = document.querySelector(".bug");
+      let rotate = arrow.style.transform;
+      function mOver() {
+        rotateSum = rotate + "rotate(180deg)";
+        arrow.style.transform = rotateSum;
+        rotate = rotateSum;
+      }
+      toggle.addEventListener("mouseover", mOver);
+
+      let rotateArrow = arrow.style.transform;
+      function change (){
+        rotateSum = rotateArrow + "rotate(180deg)";
+        arrow.style.transform = rotateSum;
+        rotateArrow = rotateSum;
+      }
+
+      bug.addEventListener("mouseover", change);
+
+      let menuOpen = document.querySelector("#menu-open");
+      let menuClose = document.querySelector("#menu-close");
+      let scroll = document.querySelector("#menu-scroll");
+      let cotton = document.querySelector("#bg");
+
+      let menuBg = cotton.style.display;
+      let menuScroll = scroll.style.display;
+
+      function display (){
+        let menu = menuScroll + "flex";
+        scroll.style.display = menu;
+        // menuScroll = menu;
+      }
+      menuOpen.addEventListener("click", display);
+
+      
+
+      function displayTwo (){
+        scroll.style.display = "none"
+      }
+      menuClose.addEventListener("click", displayTwo);
+    </script>
+  </body>
+</html>
+
+
