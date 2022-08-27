@@ -65,7 +65,7 @@
           <img id="menu-close" src="images/icon-close-menu.svg">
           <div id="section">
             <ul>
-              <li class="toggle" >Features <img class="arrow" src="images/icon-arrow-down.svg" >
+              <li class="bug" >Features <img class="arrow" src="images/icon-arrow-down.svg" >
                 <div class="sub-section">
                   <ul>
                     <li><img src="images/icon-todo.svg"> Todo List</li>
@@ -75,7 +75,7 @@
                   </ul>
                 </div>
               </li>
-              <li class="toggle">Company <img class="arrow" src="images/icon-arrow-down.svg" >
+              <li class="bug">Company <img class="arrow" src="images/icon-arrow-down.svg" >
                 <div class="sub-section">
                   <ul>
                     <li>History</li>
@@ -96,47 +96,53 @@
       </div>
     </div>
     <script>
-      let arrow = document.querySelector(".arrow");
-      let toggle = document.querySelector(".toggle");
-      let bug = document.querySelector(".bug");
-      let rotate = arrow.style.transform;
-      function mOver() {
-        rotateSum = rotate + "rotate(180deg)";
-        arrow.style.transform = rotateSum;
-        rotate = rotateSum;
-      }
-      toggle.addEventListener("mouseover", mOver);
 
-      let rotateArrow = arrow.style.transform;
-      function change (){
-        rotateSum = rotateArrow + "rotate(180deg)";
-        arrow.style.transform = rotateSum;
-        rotateArrow = rotateSum;
-      }
-
-      bug.addEventListener("mouseover", change);
-
+      // element
+      let arrow = document.querySelectorAll(".arrow");
+      let arrowTwo = document.querySelectorAll(".arrow1");
+      let tog = document.querySelectorAll(".tog");
+      let bug = document.querySelectorAll(".bug");
       let menuOpen = document.querySelector("#menu-open");
       let menuClose = document.querySelector("#menu-close");
       let scroll = document.querySelector("#menu-scroll");
-      let cotton = document.querySelector("#bg");
 
-      let menuBg = cotton.style.display;
-      let menuScroll = scroll.style.display;
+      // bug.forEach((el) => {
+      //   el.addEventListener("mouseenter", function(){
+      //     el.children[0].style.transform = "rotate(180deg)"
+      //     el.children[0].style.marginLeft = "-5px"
+      //   });
+      // })
+
+      // console.log(bug, "and", tog)
+      // bug.forEach((el, ind) => {
+      //   el.addEventListener("mouseenter", function(){
+      //     arrow[ind].style.transform = "rotate(180deg)";
+      //     // if(ind === 0 || ind === 1)  arrow[ind].style.marginLeft = "-5px"
+      //   });
+      // })
+
+      // bug.forEach((el, ind) => {
+      //   el.addEventListener("mouseleave", function(){
+      //     arrow[ind].style.transform = "rotate(0deg)"
+      //     if(ind === 0 || ind === 1)  arrow[ind].style.marginLeft = "5px"
+      //   });
+      // })
+
 
       function display (){
-        let menu = menuScroll + "flex";
-        scroll.style.display = menu;
-        // menuScroll = menu;
+        scroll.style.display = "flex";
       }
-      menuOpen.addEventListener("click", display);
-
-      
-
       function displayTwo (){
         scroll.style.display = "none"
       }
+
+      // event
+      menuOpen.addEventListener("click", display);
       menuClose.addEventListener("click", displayTwo);
+
+
+     
+
     </script>
   </body>
 </html>
