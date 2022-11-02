@@ -4,144 +4,84 @@
     <meta charset = "utf-8">
     <title>Intro Section</title>
     <link rel = "stylesheet" href = "styles.css">
-    <link rel = "stylesheet" href = "https://fonts.google.com/specimen/Epilogue">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <div id="container">
-      <div id="heading">
-        <img id="logo" src="images/logo.svg">
-        <nav>
-          <div id="section-1">
-            <ul>
-              <li class="bug">Features <img class="arrow" src="images/icon-arrow-down.svg" >
-                <div class="sub-menu">
-                  <ul class="tag">
-                    <li><img src="images/icon-todo.svg"> Todo List</li>
-                    <li><img src="images/icon-calendar.svg"> Calendar</li>
-                    <li><img src="images/icon-reminders.svg"> Reminders</li>
-                    <li><img src="images/icon-planning.svg"> Plannig</li>
-                  </ul>
-                </div>
-              </li>
-              <li class="bug">Company <img class="arrow" src="images/icon-arrow-down.svg" >
-                <div class="sub-menu">
-                  <ul class="tug">
-                    <li>History</li>
-                    <li>Our Team</li>
-                    <li>Blog</li>
-                  </ul>
-                </div>
-              </li>
-              <li>Careers</li>
-              <li>About</li>
-            </ul>
-          </div>
-          <div id="last">
-            <p>Login</p>
-            <button>Register</button>
-          </div>
-        </nav>
-        <img id="menu-open" src="images/icon-menu.svg">
-      </div>
-      <div id="bg">
-        <img id="image" src="images/image-hero-mobile.png" alt="hero with laptop">
-        <img id="image-2" src="images/image-hero-desktop.png" alt="hero with laptop">
-        <div id="content">
-          <h1><span>Make</span> remote work</h1>
+    <header>
+      <img id="logo" src="images/logo.svg">
+      <img id="menu-open" src="images/icon-menu.svg">
+      <nav id="nav-bar">
+        <img id="menu-close" src="images/icon-close-menu.svg">
+        <ul>
+          <li class="menu"><a href="#">Features <img class="arrow" src="images/icon-arrow-down.svg">
+            <div class="sub-menu">
+              <ul>
+                <li><a href="#"><img src="images/icon-todo.svg"> Todo List</a></li>
+                <li><a href="#"><img src="images/icon-calendar.svg"> Calendar</a></li>
+                <li><a href="#"><img src="images/icon-reminders.svg"> Reminders</a></li>
+                <li><a href="#"><img src="images/icon-planning.svg"> Plannig</a></li>
+              </ul>
+            </div>
+          </a></li>
+          <li class="menu"><a href="#">Company <img class="arrow" src="images/icon-arrow-down.svg">
+            <div class="sub-menu">
+              <ul class="company">
+                <li><a href="#">History</a></li>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Blog</a></li>
+              </ul>
+            </div>
+          </a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Login</a></li>
+          <li class="button"><a href="#">Register</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <section>
+          <h1>Make remote work</h1>
           <p>Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
-        </div>
-        <button>Learn more</button>
-        <div id="data">
+          <button>Learn more</button>
+        </section>
+        <section class="last">
           <img class="log one" src="images/client-databiz.svg">
           <img class="log two" src="images/client-audiophile.svg">
           <img class="log three" src="images/client-meet.svg">
           <img class="log four" src="images/client-maker.svg">
-        </div>
-      </div>
-      <div id="menu-scroll">
-        <div id="trans"></div>
-        <div id="scroll">
-          <img id="menu-close" src="images/icon-close-menu.svg">
-          <div id="section">
-            <ul>
-              <li class="bug" >Features <img class="arrow" src="images/icon-arrow-down.svg" >
-                <div class="sub-section">
-                  <ul>
-                    <li><img src="images/icon-todo.svg"> Todo List</li>
-                    <li><img src="images/icon-calendar.svg"> Calendar</li>
-                    <li><img src="images/icon-reminders.svg"> Reminders</li>
-                    <li><img src="images/icon-planning.svg"> Plannig</li>
-                  </ul>
-                </div>
-              </li>
-              <li class="bug">Company <img class="arrow" src="images/icon-arrow-down.svg" >
-                <div class="sub-section">
-                  <ul>
-                    <li>History</li>
-                    <li>Our Team</li>
-                    <li>Blog</li>
-                  </ul>
-                </div>
-              </li>
-              <li>Careers</li>
-              <li>About</li>
-            </ul>
-          </div>
-          <div id="last">
-            <p>Login</p>
-            <button>Register</button>
-          </div>
-        </div>
-      </div>
-    </div>
+        </section>
+      </article>
+      <article>
+        <img id="image" src="images/image-hero-mobile.png" alt="hero with laptop">
+        <img id="image-2" src="images/image-hero-desktop.png" alt="hero with laptop">
+      </article>
+    </main>
     <script>
+      
+      const close = document.querySelector('#menu-close');
 
-      // element
-      let arrow = document.querySelectorAll(".arrow");
-      let arrowTwo = document.querySelectorAll(".arrow1");
-      let tog = document.querySelectorAll(".tog");
-      let bug = document.querySelectorAll(".bug");
-      let menuOpen = document.querySelector("#menu-open");
-      let menuClose = document.querySelector("#menu-close");
-      let scroll = document.querySelector("#menu-scroll");
+      document.querySelector('#menu-open').addEventListener("click", function(){
+        document.querySelector('nav').style.display = "block";
+      });
 
-      // bug.forEach((el) => {
-      //   el.addEventListener("mouseenter", function(){
-      //     el.children[0].style.transform = "rotate(180deg)"
-      //     el.children[0].style.marginLeft = "-5px"
-      //   });
-      // })
+      close.addEventListener("click", function(){
+        document.querySelector('nav').style.display = "none";
+      });
 
-      // console.log(bug, "and", tog)
-      // bug.forEach((el, ind) => {
-      //   el.addEventListener("mouseenter", function(){
-      //     arrow[ind].style.transform = "rotate(180deg)";
-      //     // if(ind === 0 || ind === 1)  arrow[ind].style.marginLeft = "-5px"
-      //   });
-      // })
+      const navBar = document.querySelector("#nav-bar");
 
-      // bug.forEach((el, ind) => {
-      //   el.addEventListener("mouseleave", function(){
-      //     arrow[ind].style.transform = "rotate(0deg)"
-      //     if(ind === 0 || ind === 1)  arrow[ind].style.marginLeft = "5px"
-      //   });
-      // })
-
-
-      function display (){
-        scroll.style.display = "flex";
+      window.addEventListener("resize", function(){
+          let browserWidth = window.innerWidth;
+          if(browserWidth >= 950) {
+              navBar.style.display = "flex"
+          }
       }
-      function displayTwo (){
-        scroll.style.display = "none"
-      }
-
-      // event
-      menuOpen.addEventListener("click", display);
-      menuClose.addEventListener("click", displayTwo);
-
-
-     
+      )
 
     </script>
   </body>
